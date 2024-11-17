@@ -60,55 +60,80 @@ body {
     border-radius: 4px;
 }
 
+.navbar-toggle {
+    display: none; /* ซ่อนในเดสก์ท็อป */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 .container {
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 70px;
-    border-radius: 25px;
+    padding: 20px;
+    border-radius: 10px;
     display: inline-block;
     margin: 0 auto;
-    max-width: 500px;
-    width: 90%;
+    max-width: 800px;
+    width: 90%; /* ปรับให้ใช้ความกว้าง 90% ของหน้าจอ */
     margin-top: 80px; /* เพิ่มการเว้นระยะด้านบนสำหรับ navbar */
 }
 
-.center-image {
-    display: block;
-    margin-left: 25;
-    margin-right: -25;
-}
-
-.adjust-left {
-    transform: translateX(-10px); /* ขยับไปทางซ้าย 10px */
-}
-
-h1 {
-    font-size: 2.5em;
-    color: #ffffff;
-}
-
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #3498db;
+h1.minecraft-text {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 2.5em; /* ลดขนาดฟอนต์ */
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
+    text-shadow: 2px 2px #000;
 }
+
 .logo-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: px; /* ลดขนาดโลโก้ */
+    width: 40px; /* ลดขนาดโลโก้ */
     height: auto;
 }
 
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dev-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดกึ่งกลาง */
+    justify-content: center;
+    margin-top: 20px;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.dev-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* เปลี่ยนการจัดระยะ */
+}
+
+.dev-profile p {
+    margin: 0;
+    text-align: center; /* จัดกึ่งกลาง */
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+}
+
 p {
-    font-size: 16px;
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
     line-height: 1.5;
-    color: #ffffff;
+    color: #000;
 }
 
 a.btn {
@@ -119,7 +144,7 @@ a.btn {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
 }
 
 a.btn:hover {
@@ -134,7 +159,7 @@ button {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
     cursor: pointer;
 }
 
@@ -142,32 +167,8 @@ button:hover {
     background-color: #2980b9;
 }
 
-.dev-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    background: none;
-    padding: 0;
-    border: none;
-    
-}
-
-.dev-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.dev-profile p {
-    margin: 0 auto;
-}
-
 a {
-    color: #ffffff;
+    color: #3498db;
     text-decoration: none;
     font-weight: bold;
 }
@@ -177,38 +178,21 @@ a:hover {
 }
 
 /* Media Queries สำหรับอุปกรณ์มือถือ */
-@media screen and (max-width: 600px) {
-    .navbar-container {
-        flex-direction: column; /* จัดเรียงแนวตั้งสำหรับมือถือ */
-        padding: 10px;
-    }
+@media screen and (max-width: 768px) {
     .navbar-menu {
-        flex-direction: column; /* จัดเรียงเมนูในแนวตั้งสำหรับมือถือ */
+        display: none; /* ซ่อนเมนูบนมือถือ */
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-toggle {
+        display: flex; /* แสดงปุ่มสามขีดบนมือถือ */
+    }
+    .navbar-menu.active {
+        display: flex; /* แสดงเมนูเมื่อมีการกดปุ่มสามขีด */
     }
     .navbar-menu li {
-        padding: 10px 0;
-    }
-    .navbar-menu li a {
-        font-size: 1.2em; /* ขนาดฟอนต์ใหญ่ขึ้นสำหรับมือถือ */
-    }
-    h1.minecraft-text {
-        font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
-    }
-    .logo-image {
-        width: 30px; /* ลดขนาดโลโก้สำหรับมือถือ */
-    }
-    .container {
-        padding: 10px; /* ลดการเว้นระยะใน container */
-    }
-    .dev-avatar {
-        width: 40px;
-        height: 40px;
-    }
-    a.btn, button {
-        padding: 8px 16px; /* ลดขนาดปุ่มสำหรับมือถือ */
-        font-size: 0.9em; /* ลดขนาดตัวหนังสือในปุ่มสำหรับมือถือ */
-    }
-    p {
-        font-size: 0.8em; /* ลดขนาดตัวหนังสือสำหรับมือถือ */
+        text-align: center;
+        padding: 10px;
+        width: 100%;
     }
 }
