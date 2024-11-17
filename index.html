@@ -6,9 +6,29 @@
     <title>เซิฟเวอร์ Minecraft PE</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    
+    <style>
+        .loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".loader").classList.add("hidden");
+        });
+    </script>
 </head>
 <body>
+    <div class="loader">
+        <img src="https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?resize=476%2C280&ssl=1" alt="Loading...">
+    </div>
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="navbar-logo">
@@ -19,10 +39,11 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+
             <ul class="navbar-menu">
                 <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="#about">เกี่ยวกับ</a></li>
-                <li><a href="#servers">เซิฟเวอร์</a></li>
+                <li><a href="#about">ข้อมูล</a></li>
+                <li><a href="#servers">ข่าวสาร</a></li>
                 <li><a href="link_to_another_page.html">ดูเพิ่มเติม</a></li>
             </ul>
         </div>
