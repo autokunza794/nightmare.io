@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 100px;
+    transition: all 0.4s ease;
 }
 
 .navbar {
@@ -21,6 +22,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
+    transition: all 0.4s ease;
 }
 
 .navbar-container {
@@ -30,11 +32,17 @@ body {
     padding: 0 20px;
     max-width: 1200px;
     margin: auto;
+    transition: all 0.4s ease;
+}
+
+.navbar-logo {
+    transition: all 0.4s ease;
 }
 
 .navbar-logo img {
     width: 40px; /* ปรับขนาดโลโก้ */
     height: auto;
+    transition: all 0.4s ease;
 }
 
 .navbar-menu {
@@ -42,6 +50,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center; /* จัดกึ่งกลาง */
+    align-items: center;
+    transition: all 0.4s ease;
 }
 
 .navbar-menu li {
@@ -53,6 +64,10 @@ body {
     text-decoration: none;
     font-size: 1em;
     font-family: 'Minecraft', sans-serif;
+    transition: all 0.4s ease;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
 }
 
 .navbar-menu li a:hover {
@@ -64,6 +79,9 @@ body {
     display: none; /* ซ่อนในเดสก์ท็อป */
     flex-direction: column;
     cursor: pointer;
+    position: absolute;
+    right: 20px; /* ตำแหน่งขวา */
+    transition: all 0.4s ease;
 }
 
 .navbar-toggle .bar {
@@ -71,7 +89,11 @@ body {
     height: 3px;
     background-color: #fff;
     margin: 4px 0;
-    transition: 0.4s;
+    transition: all 0.4s ease;
+}
+
+.smooth-transition {
+    transition: all 0.4s ease; /* เพิ่มการเปลี่ยนแปลงแบบสมูท */
 }
 
 .container {
@@ -83,6 +105,7 @@ body {
     max-width: 800px;
     width: 90%; /* ปรับให้ใช้ความกว้าง 90% ของหน้าจอ */
     margin-top: 80px; /* เพิ่มการเว้นระยะด้านบนสำหรับ navbar */
+    transition: all 0.4s ease;
 }
 
 h1.minecraft-text {
@@ -90,6 +113,7 @@ h1.minecraft-text {
     font-size: 2.5em; /* ลดขนาดฟอนต์ */
     color: #fff;
     text-shadow: 2px 2px #000;
+    transition: all 0.4s ease;
 }
 
 .logo-image {
@@ -98,12 +122,14 @@ h1.minecraft-text {
     margin-right: auto;
     width: 40px; /* ลดขนาดโลโก้ */
     height: auto;
+    transition: all 0.4s ease;
 }
 
 .center-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: all 0.4s ease;
 }
 
 .dev-profile {
@@ -115,6 +141,7 @@ h1.minecraft-text {
     background: none;
     padding: 0;
     border: none;
+    transition: all 0.4s ease;
 }
 
 .dev-avatar {
@@ -122,18 +149,21 @@ h1.minecraft-text {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px; /* เปลี่ยนการจัดระยะ */
+    transition: all 0.4s ease;
 }
 
 .dev-profile p {
     margin: 0;
     text-align: center; /* จัดกึ่งกลาง */
     font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+    transition: all 0.4s ease;
 }
 
 p {
     font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
     line-height: 1.5;
-    color: #000;
+    color: #ffffff;
+    transition: all 0.4s ease;
 }
 
 a.btn {
@@ -145,6 +175,7 @@ a.btn {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
+    transition: all 0.4s ease;
 }
 
 a.btn:hover {
@@ -161,6 +192,7 @@ button {
     border-radius: 5px;
     font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 button:hover {
@@ -171,10 +203,25 @@ a {
     color: #3498db;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.4s ease;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+h2 {    
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+    line-height: 1.5;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+h3 {    
+    font-size: 2em; /* ลดขนาดตัวหนังสือ */
+    line-height: 1.5;
+    color: #000000;
+    transition: all 0.4s ease;
 }
 
 /* Media Queries สำหรับอุปกรณ์มือถือ */
@@ -183,12 +230,15 @@ a:hover {
         display: none; /* ซ่อนเมนูบนมือถือ */
         flex-direction: column;
         width: 100%;
+        transition: all 0.4s ease;
     }
     .navbar-toggle {
         display: flex; /* แสดงปุ่มสามขีดบนมือถือ */
     }
     .navbar-menu.active {
         display: flex; /* แสดงเมนูเมื่อมีการกดปุ่มสามขีด */
+        align-items: center;
+        justify-content: center;
     }
     .navbar-menu li {
         text-align: center;
