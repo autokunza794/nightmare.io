@@ -7,11 +7,57 @@ body {
     background: url('https://media.discordapp.net/attachments/1256855920227651594/1302307423507320945/Screenshot_2024.11.02_23.23.24.656.png?ex=6739700d&is=67381e8d&hm=2fe4f06e91f8112e191a4b5d4a5ace830d9d7a218af0dae59cb8a3a47bc95c1b&=&format=webp&quality=lossless&width=832&height=468') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Minecraft', sans-serif;
-    color: #ffffff;
+    color: #000;
     text-align: center;
     margin: 0;
     padding: 0;
-    padding-top: 60px;
+    padding-top: 100px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #000; /* สีดำ */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navbar-logo img {
+    width: 40px; /* ปรับขนาดโลโก้ */
+    height: auto;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    padding: 14px 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Minecraft', sans-serif;
+}
+
+.navbar-menu li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
 }
 
 .container {
@@ -20,8 +66,9 @@ body {
     border-radius: 25px;
     display: inline-block;
     margin: 0 auto;
-    max-width: 700px;
-    width: 90%
+    max-width: 500px;
+    width: 90%;
+    margin-top: 80px; /* เพิ่มการเว้นระยะด้านบนสำหรับ navbar */
 }
 
 .center-image {
@@ -39,11 +86,22 @@ h1 {
     color: #ffffff;
 }
 
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
 .logo-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px; /* ลดขนาดโลโก้ */
+    width: px; /* ลดขนาดโลโก้ */
     height: auto;
 }
 
@@ -124,7 +182,7 @@ a:hover {
         font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
     }
     .logo-image {
-        width:  200px; /* ลดขนาดโลโก้สำหรับมือถือ */
+        width: 200px; /* ลดขนาดโลโก้สำหรับมือถือ */
     }
     .container {
         padding: 10px; /* ลดการเว้นระยะใน container */
