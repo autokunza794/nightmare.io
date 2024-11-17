@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เชื่อมต่อกับเซิฟเวอร์ Minecraft PE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>คลิกที่ปุ่มด้านล่างเพื่อเข้าเซิฟเวอร์ Minecraft PE</h1>
+    <a href="minecraft://?addExternalServer=ชื่อเซิฟเวอร์|ip_address:port" class="btn">เข้าเซิฟเวอร์</a>
+
+    <script>
+        // เพิ่มชื่อเซิฟเวอร์, ip_address และ port ของคุณลงไปในลิงก์
+        const serverName = 'ชื่อเซิฟเวอร์ของคุณ';
+        const ipAddress = 'IP ของเซิฟเวอร์ของคุณ';
+        const port = 'พอร์ตของเซิฟเวอร์ของคุณ';
+        document.querySelector('.btn').href = `minecraft://?addExternalServer=${serverName}|${ipAddress}:${port}`;
+    </script>
+</body>
+</html>
