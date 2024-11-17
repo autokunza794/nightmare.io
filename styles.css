@@ -1,79 +1,248 @@
-styles.css
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const loader = document.getElementById('loader');
-            loader.classList.remove('hidden'); // แสดง GIF ขณะตรวจสอบรหัสผ่าน
+@font-face {
+    font-family: 'Minecraft';
+    src: url('minecraft.ttf') format('truetype');
+}
 
-            // จำลองการตรวจสอบรหัสผ่าน
-            setTimeout(() => {
-                loader.classList.add('hidden'); // ซ่อน GIF หลังจากตรวจสอบรหัสผ่าน
-                if (password === '141024') {
-                    window.location.href = 'sev.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
-                } else {
-                    alert('รหัสผ่านไม่ถูกต้อง');
-                }
-            }, 2000); // จำลองเวลาการตรวจสอบ 2 วินาที
-        }
+body {
+    background: url('https://media.discordapp.net/attachments/1256855920227651594/1302307423507320945/Screenshot_2024.11.02_23.23.24.656.png?ex=6739700d&is=67381e8d&hm=2fe4f06e91f8112e191a4b5d4a5ace830d9d7a218af0dae59cb8a3a47bc95c1b&=&format=webp&quality=lossless&width=832&height=468') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Minecraft', sans-serif;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    transition: all 0.4s ease;
+}
 
-        function goBack() {
-            window.history.back(); // กลับไปยังหน้าก่อนหน้านี้
-        }
-    </script>
-</head>
-<body>
-    <div class="loader hidden" id="loader">
-        <img src="https://media.giphy.com/media/Ln7g51wixZv4A/giphy.gif" alt="Loading...">
-    </div>
-    <div class="container">
-        <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
-        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
-        <button onclick="checkPassword()">เข้าสู่ระบบ</button>
-        <div class="contact">
-            <p>หากต้องการติดต่อเรา คลิกที่นี่:</p>
-            <a href="https://discord.gg/AFdteBA9nh" target="_blank">เข้าร่วม Discord</a>
-            <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
-        </div>
-    </div>
-</body>
-</html>
+.navbar {
+    width: 100%;
+    background-color: #000; /* สีดำ */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
 
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const loader = document.getElementById('loader');
-            loader.classList.remove('hidden'); // แสดง GIF ขณะตรวจสอบรหัสผ่าน
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
+    transition: all 0.4s ease;
+}
 
-            // จำลองการตรวจสอบรหัสผ่าน
-            setTimeout(() => {
-                loader.classList.add('hidden'); // ซ่อน GIF หลังจากตรวจสอบรหัสผ่าน
-                if (password === '141024') {
-                    window.location.href = 'sev.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
-                } else {
-                    alert('รหัสผ่านไม่ถูกต้อง');
-                }
-            }, 2000); // จำลองเวลาการตรวจสอบ 2 วินาที
-        }
+.navbar-logo {
+    transition: all 0.4s ease;
+}
 
-        function goBack() {
-            window.history.back(); // กลับไปยังหน้าก่อนหน้านี้
-        }
-    </script>
-</head>
-<body>
-    <div class="loader hidden" id="loader">
-        <img src="https://media.giphy.com/media/Ln7g51wixZv4A/giphy.gif" alt="Loading...">
-    </div>
-    <div class="container">
-        <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
-        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
-        <button onclick="checkPassword()">เข้าสู่ระบบ</button>
-        <div class="contact">
-            <p>หากต้องการติดต่อเรา คลิกที่นี่:</p>
-            <a href="https://discord.gg/AFdteBA9nh" target="_blank">เข้าร่วม Discord</a>
-            <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
-        </div>
-    </div>
-    
-</body>
-</html>
+.navbar-logo img {
+    width: 40px; /* ปรับขนาดโลโก้ */
+    height: auto;
+    transition: all 0.4s ease;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลาง */
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.navbar-menu li {
+    padding: 14px 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Minecraft', sans-serif;
+    transition: all 0.4s ease;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+}
+
+.navbar-menu li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.navbar-toggle {
+    display: none; /* ซ่อนในเดสก์ท็อป */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* ตำแหน่งขวา */
+    transition: all 0.4s ease;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.4s ease;
+}
+
+.smooth-transition {
+    transition: all 0.4s ease; /* เพิ่มการเปลี่ยนแปลงแบบสมูท */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 90%; /* ปรับให้ใช้ความกว้าง 90% ของหน้าจอ */
+    margin-top: 80px; /* เพิ่มการเว้นระยะด้านบนสำหรับ navbar */
+    transition: all 0.4s ease;
+}
+
+h1.minecraft-text {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 2.5em; /* ลดขนาดฟอนต์ */
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    transition: all 0.4s ease;
+}
+
+.logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px; /* ลดขนาดโลโก้ */
+    height: auto;
+    transition: all 0.4s ease;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.4s ease;
+}
+
+.dev-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดกึ่งกลาง */
+    justify-content: center;
+    margin-top: 20px;
+    background: none;
+    padding: 0;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+.dev-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* เปลี่ยนการจัดระยะ */
+    transition: all 0.4s ease;
+}
+
+.dev-profile p {
+    margin: 0;
+    text-align: center; /* จัดกึ่งกลาง */
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+    transition: all 0.4s ease;
+}
+
+p {
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+    line-height: 1.5;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #1a8e34;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
+    transition: all 0.4s ease;
+}
+
+a.btn:hover {
+    background-color: #145a24;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em; /* ลดขนาดตัวหนังสือในปุ่ม */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {    
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือ */
+    line-height: 1.5;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+h3 {    
+    font-size: 2em; /* ลดขนาดตัวหนังสือ */
+    line-height: 1.5;
+    color: #000000;
+    transition: all 0.4s ease;
+}
+
+/* Media Queries สำหรับอุปกรณ์มือถือ */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* ซ่อนเมนูบนมือถือ */
+        flex-direction: column;
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+    .navbar-toggle {
+        display: flex; /* แสดงปุ่มสามขีดบนมือถือ */
+    }
+    .navbar-menu.active {
+        display: flex; /* แสดงเมนูเมื่อมีการกดปุ่มสามขีด */
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar-menu li {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+}
