@@ -4,3 +4,10 @@ function copyToClipboard() {
         alert("ลิงก์เซิฟเวอร์ถูกคัดลอกแล้ว!");
     });
 }
+// script.js
+const mobileMenu = document.querySelector('#mobile-menu');
+const navMenu = document.querySelector('.navbar-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
