@@ -178,11 +178,24 @@ a:hover {
 
 /* Media Queries สำหรับอุปกรณ์มือถือ */
 @media screen and (max-width: 600px) {
+    .navbar-container {
+        flex-direction: column; /* จัดเรียงแนวตั้งสำหรับมือถือ */
+        padding: 10px;
+    }
+    .navbar-menu {
+        flex-direction: column; /* จัดเรียงเมนูในแนวตั้งสำหรับมือถือ */
+    }
+    .navbar-menu li {
+        padding: 10px 0;
+    }
+    .navbar-menu li a {
+        font-size: 1.2em; /* ขนาดฟอนต์ใหญ่ขึ้นสำหรับมือถือ */
+    }
     h1.minecraft-text {
         font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
     }
     .logo-image {
-        width: 200px; /* ลดขนาดโลโก้สำหรับมือถือ */
+        width: 30px; /* ลดขนาดโลโก้สำหรับมือถือ */
     }
     .container {
         padding: 10px; /* ลดการเว้นระยะใน container */
@@ -193,6 +206,9 @@ a:hover {
     }
     a.btn, button {
         padding: 8px 16px; /* ลดขนาดปุ่มสำหรับมือถือ */
-        font-size: 1em;
+        font-size: 0.9em; /* ลดขนาดตัวหนังสือในปุ่มสำหรับมือถือ */
+    }
+    p {
+        font-size: 0.8em; /* ลดขนาดตัวหนังสือสำหรับมือถือ */
     }
 }
