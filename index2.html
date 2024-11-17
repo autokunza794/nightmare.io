@@ -5,13 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าข้อมูลเพิ่มเติม</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .navbar {
+    width: 100%;
+    background-color: #000; /* สีดำ */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
+    transition: all 0.4s ease;
+}
+
+.navbar-logo {
+    transition: all 0.4s ease;
+}
+
+.navbar-logo img {
+    width: 40px; /* ปรับขนาดโลโก้ */
+    height: auto;
+    transition: all 0.4s ease;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลาง */
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.navbar-menu li {
+    padding: 14px 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Minecraft', sans-serif;
+    transition: all 0.4s ease;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+}
+
+.navbar-menu li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.navbar-toggle {
+    display: none; /* ซ่อนในเดสก์ท็อป */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* ตำแหน่งขวา */
+    transition: all 0.4s ease;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.4s ease;
+}
+
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            background-color: #ffffff;
+            margin-top: 70px;
+            width: 80%;
+        }
+
+        h1.minecraft-text, h2.minecraft-text {
+            font-family: 'Minecraftia', Arial, sans-serif;
+        }
+
+        .dev-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .dev-profile {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            max-width: 150px;
+        }
+
+        .dev-profile img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        /* Media Queries สำหรับอุปกรณ์มือถือ */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* ซ่อนเมนูบนมือถือ */
+        flex-direction: column;
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+    .navbar-toggle {
+        display: flex; /* แสดงปุ่มสามขีดบนมือถือ */
+    }
+    .navbar-menu.active {
+        display: flex; /* แสดงเมนูเมื่อมีการกดปุ่มสามขีด */
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar-menu li {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+}
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index2.html" class="navbar-logo">
+                <img src="https://media.discordapp.net/attachments/1295926056095846433/1307388258619097159/Black_and_White_Retro_Y2K_Streetwear_Clothing_Logo-1-1.png?ex=673a1fb2&is=6738ce32&hm=10bb4a19553d65b403385e9001ce36b907405fd3fd3df6da7ac17b25c171f686&=&format=webp&quality=lossless&width=40&height=40" alt="Logo">
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="#about">ข้อมูล</a></li>
+                <li><a href="#servers">ข่าวสาร</a></li>
+                <li><a href="link_to_another_page.html">ดูเพิ่มเติม</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="container">
-        <h1 class="minecraft-text">ข้อมูลเพิ่มเติม</h1>
-        <h2 class="minecraft-text">รายชื่อผู้พัฒนา</h2>
-        <br><br>
-        <img src="https://media.discordapp.net/attachments/1295926056095846433/1307388258619097159/Black_and_White_Retro_Y2K_Streetwear_Clothing_Logo-1-1.png?ex=673a1fb2&is=6738ce32&hm=10bb4a19553d65b403385e9001ce36b907405fd3fd3df6da7ac17b25c171f686&=&format=webp&quality=lossless&width=468&height=468" alt="Black and White Retro Y2K Streetwear Clothing Logo" class="center-image">
+        <h3 class="minecraft-text">ข้อมูลเพิ่มเติม</h3>
+        <h4 class="minecraft-text">รายชื่อผู้พัฒนา</h4>
+        <div class="dev-row">
+            <div class="dev-profile">
+                <img src="https://yt3.googleusercontent.com/Q3kmN0SzRkQucgjLiuMf5fZbb6QmkoYkmAvd3KSDDIZuEKNblp29rT077QvwjKOIqs3qbtroLw=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
+                <p>ผู้พัฒนา: <a href="https://www.youtube.com/channel/UC4N37sq0_8M01Fu_eN5e3iA" target="">ADAM</a></p>
+            </div>
+            <div class="dev-profile">
+                <img src="https://yt3.googleusercontent.com/CwV_DgTsXpO6pU8CqPGbC18xiBuLCGe3W9v8LMAXmFpk1bUkHSONKCYSW6JfspAPlofduCAo=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
+                <p>ผู้พัฒนา: <a href="https://www.youtube.com/channel/UCMXYBwHuk37ous3tOis9CfA" target="_blank">ZE_RZIA.</a></p>
+            </div>
+            <div class="dev-profile">
+                <img src="https://yt3.googleusercontent.com/2dKMcs2qwXTAp3zGikRJZ09xVupzAhw4jyqKBeViLS0yznPMWlyqTKEOj4sUonweo-yFgjwT=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
+                <p>ผู้พัฒนา: <a href="https://www.youtube.com/channel/UCM__DEkNTfziCqlEFU3mzTA" target="_blank">AUTZXA</a></p>
+            </div>
+            <div class="dev-profile">
+                <img src="https://yt3.googleusercontent.com/182zOuFn2uSozqp47rYj1fpdGnEsTIORh2F-oAlcRuo3j_Q5eyJA3zR-vk8DTXs1CunYLiO0xA=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
+                <p>ผู้พัฒนา: <a href="https://www.youtube.com/@Makinomumu" target="_blank">ᴍʀ.ᴍᴜᴍᴜ</a></p>
+            </div>
+        </div>
         <br><br>
         <a href="index.html" class="btn">กลับไปหน้าหลัก</a>
     </div>
