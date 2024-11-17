@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('minecraft.ttf') format('truetype');
+}
+
+body {
+    background: url('https://media.discordapp.net/attachments/1256855920227651594/1302307423507320945/Screenshot_2024.11.02_23.23.24.656.png?ex=6739700d&is=67381e8d&hm=2fe4f06e91f8112e191a4b5d4a5ace830d9d7a218af0dae59cb8a3a47bc95c1b&=&format=webp&quality=lossless&width=832&height=468') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Minecraft', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 70px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.center-image {
+    display: block;
+    margin-left: 25;
+    margin-right: -25;
+}
+
+.adjust-left {
+    transform: translateX(-10px); /* ขยับไปทางซ้าย 10px */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #1a8e34;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+a.btn:hover {
+    background-color: #145a24;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.dev-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background: none;
+    padding: 0;
+    border: none;
+    
+}
+
+.dev-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.dev-profile p {
+    margin: 0 auto;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries สำหรับอุปกรณ์มือถือ */
+@media screen and (max-width: 600px) {
+    h1.minecraft-text {
+        font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
+    }
+    .logo-image {
+        width: 40px; /* ลดขนาดโลโก้สำหรับมือถือ */
+    }
+    .container {
+        padding: 10px; /* ลดการเว้นระยะใน container */
+    }
+    .dev-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    a.btn, button {
+        padding: 8px 16px; /* ลดขนาดปุ่มสำหรับมือถือ */
+        font-size: 1em;
+    }
+}
