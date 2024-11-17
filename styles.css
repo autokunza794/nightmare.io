@@ -20,7 +20,7 @@ body {
     border-radius: 25px;
     display: inline-block;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 700px;
     width: 90%
 }
 
@@ -124,7 +124,7 @@ a:hover {
         font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
     }
     .logo-image {
-        width: 90px; /* ลดขนาดโลโก้สำหรับมือถือ */
+        width:  200px; /* ลดขนาดโลโก้สำหรับมือถือ */
     }
     .container {
         padding: 10px; /* ลดการเว้นระยะใน container */
