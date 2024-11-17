@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>เข้าสู่ระบบ</title>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === '141024') {
+                window.location.href = 'หน้าเว็บ.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
+            } else {
+                alert('รหัสผ่านไม่ถูกต้อง');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
+    <input type="password" id="password" placeholder="รหัสผ่าน">
+    <button onclick="checkPassword()">เข้าสู่ระบบ</button>
+</body>
+</html>
