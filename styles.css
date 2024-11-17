@@ -115,7 +115,7 @@ a:hover {
         font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
     }
     .logo-image {
-        width: 40px; /* ลดขนาดโลโก้สำหรับมือถือ */
+        width: 90px; /* ลดขนาดโลโก้สำหรับมือถือ */
     }
     .container {
         padding: 10px; /* ลดการเว้นระยะใน container */
