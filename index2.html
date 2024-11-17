@@ -7,96 +7,80 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        /* ส่วนที่ไม่ต้องการปรับปรุง */
+
+        .navbar {
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: auto;
+            transition: all 0.4s ease;
+        }
+
+        .navbar-logo img {
+            width: 40px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .navbar-menu {
+            list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+            transition: all 0.4s ease;
         }
 
-        .navbar {
-    width: 100%;
-    background-color: #000; /* สีดำ */
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.4s ease;
-}
+        .navbar-menu li {
+            padding: 14px 20px;
+        }
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: auto;
-    transition: all 0.4s ease;
-}
+        .navbar-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            font-family: 'Minecraft', sans-serif;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.navbar-logo {
-    transition: all 0.4s ease;
-}
+        .navbar-menu li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
 
-.navbar-logo img {
-    width: 40px; /* ปรับขนาดโลโก้ */
-    height: auto;
-    transition: all 0.4s ease;
-}
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            transition: all 0.4s ease;
+        }
 
-.navbar-menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* จัดกึ่งกลาง */
-    align-items: center;
-    transition: all 0.4s ease;
-}
-
-.navbar-menu li {
-    padding: 14px 20px;
-}
-
-.navbar-menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    font-family: 'Minecraft', sans-serif;
-    transition: all 0.4s ease;
-    display: flex; /* ใช้ Flexbox */
-    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
-    justify-content: center; /* จัดกึ่งกลางแนวนอน */
-}
-
-.navbar-menu li a:hover {
-    background-color: #575757;
-    border-radius: 4px;
-}
-
-.navbar-toggle {
-    display: none; /* ซ่อนในเดสก์ท็อป */
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    right: 20px; /* ตำแหน่งขวา */
-    transition: all 0.4s ease;
-}
-
-.navbar-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: all 0.4s ease;
-}
-
+        .navbar-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.4s ease;
+        }
 
         .container {
             text-align: center;
@@ -150,28 +134,29 @@
         .btn:hover {
             background-color: #2980b9;
         }
+
         /* Media Queries สำหรับอุปกรณ์มือถือ */
-@media screen and (max-width: 768px) {
-    .navbar-menu {
-        display: none; /* ซ่อนเมนูบนมือถือ */
-        flex-direction: column;
-        width: 100%;
-        transition: all 0.4s ease;
-    }
-    .navbar-toggle {
-        display: flex; /* แสดงปุ่มสามขีดบนมือถือ */
-    }
-    .navbar-menu.active {
-        display: flex; /* แสดงเมนูเมื่อมีการกดปุ่มสามขีด */
-        align-items: center;
-        justify-content: center;
-    }
-    .navbar-menu li {
-        text-align: center;
-        padding: 10px;
-        width: 100%;
-    }
-}
+        @media screen and (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                transition: all 0.4s ease;
+            }
+            .navbar-toggle {
+                display: flex;
+            }
+            .navbar-menu.active {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .navbar-menu li {
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -193,14 +178,14 @@
             </ul>
         </div>
     </nav>
-    
+
     <div class="container">
         <h3 class="minecraft-text">ข้อมูลเพิ่มเติม</h3>
         <h4 class="minecraft-text">รายชื่อผู้พัฒนา</h4>
         <div class="dev-row">
             <div class="dev-profile">
                 <img src="https://yt3.googleusercontent.com/Q3kmN0SzRkQucgjLiuMf5fZbb6QmkoYkmAvd3KSDDIZuEKNblp29rT077QvwjKOIqs3qbtroLw=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
-                <p>ผู้พัฒนา: <a href="https://www.youtube.com/channel/UC4N37sq0_8M01Fu_eN5e3iA" target="">ADAM</a></p>
+                <p>ผู้พัฒนา: <a href="https://www.youtube.com/channel/UC4N37sq0_8M01Fu_eN5e3iA">ADAM</a></p>
             </div>
             <div class="dev-profile">
                 <img src="https://yt3.googleusercontent.com/CwV_DgTsXpO6pU8CqPGbC18xiBuLCGe3W9v8LMAXmFpk1bUkHSONKCYSW6JfspAPlofduCAo=s160-c-k-c0x00ffffff-no-rj" alt="Dev Profile Picture">
