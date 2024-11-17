@@ -28,6 +28,19 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             background-color: rgba(0, 0, 0, 0.7); /* เพิ่มความโปร่งใสเพื่อให้อ่านง่ายขึ้น */
             max-width: 400px; /* กำหนดความกว้างสูงสุดเพื่อให้ดูเป็นระเบียบ */
+            position: relative;
+        }
+
+        .loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .hidden {
+            display: none;
         }
 
         input[type="password"] {
@@ -71,15 +84,25 @@
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
-            if (password === '141024') {
-                window.location.href = 'หน้าเว็บ.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
-            } else {
-                alert('รหัสผ่านไม่ถูกต้อง');
-            }
+            const loader = document.getElementById('loader');
+            loader.classList.remove('hidden'); // แสดง GIF ขณะตรวจสอบรหัสผ่าน
+
+            // จำลองการตรวจสอบรหัสผ่าน
+            setTimeout(() => {
+                loader.classList.add('hidden'); // ซ่อน GIF หลังจากตรวจสอบรหัสผ่าน
+                if (password === '141024') {
+                    window.location.href = 'sev.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
+                } else {
+                    alert('รหัสผ่านไม่ถูกต้อง');
+                }
+            }, 2000); // จำลองเวลาการตรวจสอบ 2 วินาที
         }
     </script>
 </head>
 <body>
+    <div class="loader hidden" id="loader">
+        <img src="https://media.giphy.com/media/Ln7g51wixZv4A/giphy.gif" alt="Loading...">
+    </div>
     <div class="container">
         <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
         <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
