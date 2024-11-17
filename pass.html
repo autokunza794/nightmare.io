@@ -2,6 +2,72 @@
 <html>
 <head>
     <title>เข้าสู่ระบบ</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraftia';
+            src: url('fonts/Minecraftia-Regular.ttf') format('truetype');
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Minecraftia', Arial, sans-serif;
+            background: url('https://github.com/autokunza794/nightmare.io/blob/main/img/2024-09-17_14.22.55.png?raw=true') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7); /* เพิ่มความโปร่งใสเพื่อให้อ่านง่ายขึ้น */
+            max-width: 400px; /* กำหนดความกว้างสูงสุดเพื่อให้ดูเป็นระเบียบ */
+        }
+
+        input[type="password"] {
+            width: calc(100% - 22px); /* ปรับความกว้างของกล่องข้อความ */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            font-family: 'Minecraftia', Arial, sans-serif;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db; /* สีฟ้าสดใส */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* สีเมื่อวางเมาส์บนปุ่ม */
+        }
+
+        .contact {
+            margin-top: 20px;
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #2980b9;
+        }
+    </style>
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
@@ -14,8 +80,14 @@
     </script>
 </head>
 <body>
-    <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
-    <input type="password" id="password" placeholder="รหัสผ่าน">
-    <button onclick="checkPassword()">เข้าสู่ระบบ</button>
+    <div class="container">
+        <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
+        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
+        <button onclick="checkPassword()">เข้าสู่ระบบ</button>
+        <div class="contact">
+            <p>หากต้องการติดต่อเรา คลิกที่นี่:</p>
+            <a href="https://discord.gg/AFdteBA9nh" target="_blank">เข้าร่วม Discord</a>
+        </div>
+    </div>
 </body>
 </html>
