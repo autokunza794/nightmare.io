@@ -110,7 +110,72 @@
             background-color: #c0392b;
             transform: scale(1.05);
         }
+
+        /* Media Query สำหรับอุปกรณ์มือถือ */
+        @media screen and (max-width: 600px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .container {
+                width: 95%;
+                margin-top: 20px;
+                padding: 15px;
+            }
+
+            input[type="password"] {
+                width: calc(100% - 20px);
+            }
+
+            button {
+                width: calc(100% - 40px);
+            }
+
+            .back-button {
+                width: calc(100% - 40px);
+            }
+        }
     </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const loader = document.getElementById('loader');
+            loader.classList.remove('hidden'); // แสดง GIF ขณะตรวจสอบรหัสผ่าน
+
+            // จำลองการตรวจสอบรหัสผ่าน
+            setTimeout(() => {
+                loader.classList.add('hidden'); // ซ่อน GIF หลังจากตรวจสอบรหัสผ่าน
+                if (password === '141024') {
+                    window.location.href = 'sev.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
+                } else {
+                    alert('รหัสผ่านไม่ถูกต้อง');
+                }
+            }, 2000); // จำลองเวลาการตรวจสอบ 2 วินาที
+        }
+
+        function goBack() {
+            window.history.back(); // กลับไปยังหน้าก่อนหน้านี้
+        }
+    </script>
+</head>
+<body>
+    <div class="loader hidden" id="loader">
+        <img src="https://media.giphy.com/media/Ln7g51wixZv4A/giphy.gif" alt="Loading...">
+    </div>
+    <div class="container">
+        <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
+        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
+        <button onclick="checkPassword()">เข้าสู่ระบบ</button>
+        <div class="contact">
+            <p>หากต้องการติดต่อเรา คลิกที่นี่:</p>
+            <a href="https://discord.gg/AFdteBA9nh" target="_blank">เข้าร่วม Discord</a>
+            <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+        </div>
+    </div>
+</body>
+</html>
+
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
