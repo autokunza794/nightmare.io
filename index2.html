@@ -112,10 +112,13 @@
             max-width: 150px;
         }
 
-        .dev-profile img {
-            width: 100%;
-            border-radius: 50%;
-        }
+.dev-profile img {
+    width: 80px; /* กำหนดขนาดให้เล็กลง */
+    height: 80px; /* ความสูงเท่ากับความกว้าง */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover; /* ป้องกันการบีบรูปภาพ */
+    border: 2px solid #ccc; /* เพิ่มกรอบเพื่อความสวยงาม */
+}
 
         .btn {
             display: inline-block;
