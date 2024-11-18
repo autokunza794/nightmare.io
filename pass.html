@@ -26,25 +26,13 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            background-color: rgba(0, 0, 0, 0.7); /* เพิ่มความโปร่งใสเพื่อให้อ่านง่ายขึ้น */
-            max-width: 400px; /* กำหนดความกว้างสูงสุดเพื่อให้ดูเป็นระเบียบ */
-            position: relative;
-        }
-
-        .loader {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-        }
-
-        .hidden {
-            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            max-width: 90%; /* ปรับความกว้างสูงสุด */
+            width: 400px; /* ความกว้างของกล่อง */
         }
 
         input[type="password"] {
-            width: calc(100% - 22px); /* ปรับความกว้างของกล่องข้อความ */
+            width: 100%; /* ขยายเต็มหน้าจอบนมือถือ */
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -52,19 +40,19 @@
         }
 
         button {
-            font-family: 'Minecraftia', Arial, sans-serif;
-            padding: 10px 20px;
-            margin: 5px;
+            width: 100%; /* ขยายปุ่มให้เต็มความกว้าง */
+            padding: 10px;
+            margin: 5px 0;
             border: none;
             border-radius: 5px;
-            background-color: #3498db; /* สีฟ้าสดใส */
+            background-color: #3498db;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #2980b9; /* สีเมื่อวางเมาส์บนปุ่ม */
+            background-color: #2980b9;
         }
 
         .contact {
@@ -80,22 +68,42 @@
         .contact a:hover {
             color: #2980b9;
         }
+
+        .loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Media Queries สำหรับอุปกรณ์มือถือ */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+                width: 90%;
+                max-width: none; /* ปิดการจำกัดความกว้าง */
+            }
+        }
     </style>
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;
             const loader = document.getElementById('loader');
-            loader.classList.remove('hidden'); // แสดง GIF ขณะตรวจสอบรหัสผ่าน
+            loader.classList.remove('hidden');
 
-            // จำลองการตรวจสอบรหัสผ่าน
             setTimeout(() => {
-                loader.classList.add('hidden'); // ซ่อน GIF หลังจากตรวจสอบรหัสผ่าน
+                loader.classList.add('hidden');
                 if (password === '141024') {
-                    window.location.href = 'sev.html'; // ใส่ชื่อไฟล์หน้าเว็บที่ต้องการเข้าถึงหลังจากรหัสผ่านถูกต้อง
+                    window.location.href = 'sev.html';
                 } else {
                     alert('รหัสผ่านไม่ถูกต้อง');
                 }
-            }, 2000); // จำลองเวลาการตรวจสอบ 2 วินาที
+            }, 2000);
         }
     </script>
 </head>
@@ -105,7 +113,7 @@
     </div>
     <div class="container">
         <h2>กรุณาใส่รหัสผ่านเพื่อเข้าสู่หน้าเว็บ</h2>
-        <input type="password" id="password" placeholder="รหัสผ่าน"><br><br>
+        <input type="password" id="password" placeholder="รหัสผ่าน">
         <button onclick="checkPassword()">เข้าสู่ระบบ</button>
         <div class="contact">
             <p>หากต้องการติดต่อเรา คลิกที่นี่:</p>
